@@ -1,27 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Tasty Bites Restaurant</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spice Garden Restaurant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">🌶️ Spice Garden</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#order">Order Online</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#booking">Book Table</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<h1>Tasty Bites Restaurant</h1>
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>🌟 Welcome to Spice Garden</h1>
+      <p>Experience authentic Indian flavors with every bite</p>
+      <a href="#menu" class="btn">🍛 View Menu</a>
+      <a href="#order" class="btn btn-alt">🛒 Order Online</a>
+    </div>
+  </section>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="contact.html">Contact</a>
-</nav>
+  <!-- Menu Section -->
+  <section id="menu" class="menu-section">
+    <h2>🍽️ Our Menu</h2>
+    <div class="menu-cards">
+      <div class="menu-card" data-item="Chicken Biryani" data-price="300">
+        <img src="https://images.unsplash.com/photo-1568039245687-9e0f4ab10e10?w=400&fit=crop" alt="Chicken Biryani" loading="lazy">
+        <h3>Chicken Biryani</h3>
+        <p>Spicy and flavorful chicken biryani cooked with love and basmati rice.</p>
+        <span>₹300</span>
+        <button class="add-to-cart">🛒 Add to Cart</button>
+      </div>
+      
+      <div class="menu-card" data-item="Paneer Butter Masala" data-price="250">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&fit=crop" alt="Paneer Butter Masala" loading="lazy">
+        <h3>Paneer Butter Masala</h3>
+        <p>Rich and creamy paneer curry with perfect blend of spices and butter.</p>
+        <span>₹250</span>
+        <button class="add-to-cart">🛒 Add to Cart</button>
+      </div>
+      
+      <div class="menu-card" data-item="Gulab Jamun" data-price="100">
+        <img src="https://images.unsplash.com/photo-1577968897966-f97b3099cf6b?w=400&fit=crop" alt="Gulab Jamun" loading="lazy">
+        <h3>Gulab Jamun</h3>
+        <p>Soft and sweet dessert soaked in aromatic sugar syrup.</p>
+        <span>₹100</span>
+        <button class="add-to-cart">🛒 Add to Cart</button>
+      </div>
+      
+      <div class="menu-card" data-item="Masala Dosa" data-price="150">
+        <img src="https://images.unsplash.com/photo-1617096701057-9eaca5a3f7a9?w=400&fit=crop" alt="Masala Dosa" loading="lazy">
+        <h3>Masala Dosa</h3>
+        <p>Crispy dosa stuffed with spiced potato filling and chutneys.</p>
+        <span>₹150</span>
+        <button class="add-to-cart">🛒 Add to Cart</button>
+      </div>
+      
+      <div class="menu-card" data-item="Fresh Lime Soda" data-price="80">
+        <img src="https://images.unsplash.com/photo-1627308595385-6c24b92616ea?w=400&fit=crop" alt="Fresh Lime Soda" loading="lazy">
+        <h3>Fresh Lime Soda</h3>
+        <p>Refreshing lime soda with mint and perfect fizz.</p>
+        <span>₹80</span>
+        <button class="add-to-cart">🛒 Add to Cart</button>
+      </div>
+    </div>
+  </section>
 
-<p>Welcome to Tasty Bites! We serve delicious food with fresh ingredients.</p>
+  <!-- NEW Online Order Section -->
+  <section id="order" class="order-section">
+    <h2>🛒 Order Online</h2>
+    <div class="order-container">
+      <div class="cart-sidebar">
+        <h3>Your Cart (<span id="cart-count">0</span>)</h3>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+          <strong>Total: ₹<span id="cart-total">0</span></strong>
+        </div>
+        <div class="order-form">
+          <input type="text" id="customer-name" placeholder="Your Name" required>
+          <input type="tel" id="customer-phone" placeholder="Phone Number" required>
+          <select id="order-type">
+            <option value="delivery">Delivery (₹50)</option>
+            <option value="pickup">Pickup (Free)</option>
+          </select>
+          <textarea id="delivery-address" placeholder="Delivery Address (for delivery orders)"></textarea>
+          <button id="place-order" class="order-btn">🚀 Place Order</button>
+        </div>
+        <div id="order-success" class="success-message"></div>
+      </div>
+      <div class="order-info">
+        <h3>Order in 3 Easy Steps</h3>
+        <div class="steps">
+          <div class="step">
+            <span>1</span>
+            <p>Add items to cart</p>
+          </div>
+          <div class="step">
+            <span>2</span>
+            <p>Enter your details</p>
+          </div>
+          <div class="step">
+            <span>3</span>
+            <p>Confirm & Pay</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2>Why Choose Us?</h2>
-<ul>
-    <li>Fresh food</li>
-    <li>Affordable price</li>
-    <li>Fast service</li>
-</ul>
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h2>🌿 About Spice Garden</h2>
+    <div class="about-content">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&fit=crop" alt="Restaurant Interior" loading="lazy">
+      <div class="about-text">
+        <p>Spice Garden has been serving fresh and authentic Indian cuisine since 2015. Our mission is to deliver delicious food with a warm atmosphere for families and friends to enjoy together.</p>
+        <p>We use only the finest ingredients and traditional recipes passed down through generations. Come taste the difference that passion and authenticity make!</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Booking Section -->
+  <section id="booking" class="booking-section">
+    <h2>📅 Book Your Table</h2>
+    <div class="booking-card">
+      <form id="bookingForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="date" id="date" required>
+        <input type="time" id="time" required>
+        <input type="number" id="seats" placeholder="Number of Seats" min="1" max="20" required>
+        <button type="submit">🚀 Book Now</button>
+      </form>
+      <p id="confirmation"></p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>📞 Contact Us</h2>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <h3>📱 Phone</h3>
+        <p>+91-9876543210</p>
+      </div>
+      <div class="contact-card">
+        <h3>📍 Address</h3>
+        <p>123 Spice Street<br>Bengaluru, Karnataka</p>
+      </div>
+      <div class="contact-card">
+        <h3>🕒 Hours</h3>
+        <p>10:00 AM - 11:00 PM<br>(Daily)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Spice Garden Restaurant | Made with ❤️ in Bengaluru</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
